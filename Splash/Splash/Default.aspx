@@ -10,10 +10,11 @@
              that take the risk out of risktaking. MarkitBook is launching soon. Sign up for our 
             newsletter below.
         </p>
-        <p><br />
+        <p>
+            <br />
             <center>
                 <asp:TextBox ID="emailInput" runat="server" TextMode="Email"></asp:TextBox>
-                <a class="btn btn-default" href="">Sign Up</a>
+                <asp:Button ID="btnSignUp" class="btn btn-default" runat="server" Text="Sign Up" OnClick="btnSignUp_Click" />
             </center>
         </p>
     </div>
