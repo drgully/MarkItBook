@@ -16,11 +16,11 @@
 				    <div class="panel panel-login">
 					    <div class="panel-heading">
 						    <div class="row">
-							    <div class="col-xs-6">
+<%--							    <div class="col-xs-6">
 								    <a href="#" class="active" id="login-form-link">Login</a>
-							    </div>
-							    <div class="col-xs-6">
-								    <a href="#" id="register-form-link">Register</a>
+							    </div>--%>
+							    <div class="col-xs-12">
+								    <a href="#" id="register-form-link" class="active">Register</a>
 							    </div>
 						    </div>
 						    <hr>
@@ -28,7 +28,7 @@
 					    <div class="panel-body">
 						    <div class="row">
 							    <div class="col-lg-12">
-								    <form id="login-form" action="http://phpoll.com/login/process" method="post" role="form" style="display: block;">
+<%--								    <form id="login-form" action="http://phpoll.com/login/process" method="post" role="form" style="display: block;">
 									    <div class="form-group">
 										    <input type="text" name="username" id="username" tabindex="1" class="form-control" placeholder="Username" value="">
 									    </div>
@@ -55,19 +55,34 @@
 											    </div>
 										    </div>
 									    </div>
-								    </form>
+								    </form>--%>
 								    <form id="register-form" action="http://phpoll.com/register/process" method="post" role="form" style="display: none;">
 									    <div class="form-group">
-										    <input type="text" name="username" id="username" tabindex="1" class="form-control" placeholder="Username" value="">
+										    <input type="email" name="email" id="email" tabindex="1" class="form-control" placeholder="Email Address" value="">
 									    </div>
 									    <div class="form-group">
-										    <input type="email" name="email" id="email" tabindex="1" class="form-control" placeholder="Email Address" value="">
+										    <input type="text" name="username" id="username" tabindex="1" class="form-control" placeholder="Username" value="">
 									    </div>
 									    <div class="form-group">
 										    <input type="password" name="password" id="password" tabindex="2" class="form-control" placeholder="Password">
 									    </div>
 									    <div class="form-group">
 										    <input type="password" name="confirm-password" id="confirm-password" tabindex="2" class="form-control" placeholder="Confirm Password">
+									    </div>
+									    <div class="form-group">
+										    <input type="text" name="first" id="first" tabindex="1" class="form-control" placeholder="First Name" value="">
+									    </div>
+									    <div class="form-group">
+										    <input type="text" name="last" id="last" tabindex="1" class="form-control" placeholder="Last Name" value="">
+									    </div>
+                                        <div class="form-group">
+                                            <label>Gender:&nbsp;&nbsp;</label>
+                                            <label class="radio-inline"><input type="radio" name="optradio">Male</label>
+                                            <label class="radio-inline"><input type="radio" name="optradio">Female</label>
+                                            <label class="radio-inline"><input type="radio" name="optradio">Other</label>
+                                        </div>
+                                        <div class="form-group">
+										    <input type="date" name="birthdate" id="birthdate" tabindex="2" class="form-control" placeholder="Birthdate">
 									    </div>
 									    <div class="form-group">
 										    <div class="row">

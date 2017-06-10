@@ -10,14 +10,14 @@
             <PropertyRef Name="id" />
           </Key>
           <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="first" Type="varchar" MaxLength="45" />
-          <Property Name="last" Type="varchar" MaxLength="45" />
-          <Property Name="email" Type="varchar" MaxLength="100" />
-          <Property Name="mobile" Type="int" />
           <Property Name="name" Type="varchar" MaxLength="45" />
           <Property Name="password" Type="varchar" MaxLength="100" />
-          <Property Name="birthdate" Type="date" />
+          <Property Name="email" Type="varchar" MaxLength="100" />
+          <Property Name="mobile" Type="int" />
+          <Property Name="first" Type="varchar" MaxLength="45" />
+          <Property Name="last" Type="varchar" MaxLength="45" />
           <Property Name="gender" Type="char" MaxLength="1" />
+          <Property Name="birthdate" Type="date" />
           <Property Name="deleted" Type="bool" />
         </EntityType>
         <EntityContainer Name="ModelStoreContainer">
@@ -35,14 +35,14 @@
             <PropertyRef Name="id" />
           </Key>
           <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="first" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
-          <Property Name="last" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
-          <Property Name="email" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
-          <Property Name="mobile" Type="Int32" />
           <Property Name="name" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
           <Property Name="password" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
-          <Property Name="birthdate" Type="DateTime" />
+          <Property Name="email" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="mobile" Type="Int32" />
+          <Property Name="first" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+          <Property Name="last" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
           <Property Name="gender" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="birthdate" Type="DateTime" />
           <Property Name="deleted" Type="Boolean" />
         </EntityType>
       </Schema>
@@ -57,14 +57,14 @@
             <EntityTypeMapping TypeName="Model.user">
               <MappingFragment StoreEntitySet="user">
                 <ScalarProperty Name="deleted" ColumnName="deleted" />
-                <ScalarProperty Name="gender" ColumnName="gender" />
                 <ScalarProperty Name="birthdate" ColumnName="birthdate" />
-                <ScalarProperty Name="password" ColumnName="password" />
-                <ScalarProperty Name="name" ColumnName="name" />
-                <ScalarProperty Name="mobile" ColumnName="mobile" />
-                <ScalarProperty Name="email" ColumnName="email" />
+                <ScalarProperty Name="gender" ColumnName="gender" />
                 <ScalarProperty Name="last" ColumnName="last" />
                 <ScalarProperty Name="first" ColumnName="first" />
+                <ScalarProperty Name="mobile" ColumnName="mobile" />
+                <ScalarProperty Name="email" ColumnName="email" />
+                <ScalarProperty Name="password" ColumnName="password" />
+                <ScalarProperty Name="name" ColumnName="name" />
                 <ScalarProperty Name="id" ColumnName="id" />
               </MappingFragment>
             </EntityTypeMapping>

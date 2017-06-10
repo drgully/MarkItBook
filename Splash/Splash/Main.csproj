@@ -218,7 +218,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Model.cs" />
+    <Compile Include="Model.cs">
+      <DependentUpon>Model.edmx</DependentUpon>
+    </Compile>
     <Compile Include="Model.Designer.cs">
       <DependentUpon>Model.edmx</DependentUpon>
       <AutoGen>True</AutoGen>
