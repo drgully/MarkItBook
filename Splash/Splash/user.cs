@@ -15,14 +15,14 @@ namespace Splash
     public partial class user
     {
         public int id { get; set; }
-        public string first { get; set; }
-        public string last { get; set; }
-        public string email { get; set; }
-        public Nullable<int> mobile { get; set; }
         public string name { get; set; }
         public string password { get; set; }
-        public Nullable<System.DateTime> birthdate { get; set; }
+        public string email { get; set; }
+        public string mobile { get; set; }
+        public string first { get; set; }
+        public string last { get; set; }
         public string gender { get; set; }
+        public Nullable<System.DateTime> birthdate { get; set; }
         public Nullable<bool> deleted { get; set; }
     }
 }

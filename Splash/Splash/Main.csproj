@@ -131,15 +131,25 @@
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
-    <EntityDeploy Include="Model.edmx">
+    <EntityDeploy Include="MarkItBookModel.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>Model.Designer.cs</LastGenOutput>
+      <LastGenOutput>MarkItBookModel.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <Content Include="Model.edmx.diagram">
-      <DependentUpon>Model.edmx</DependentUpon>
+    <Content Include="MarkItBookModel.edmx.diagram">
+      <DependentUpon>MarkItBookModel.edmx</DependentUpon>
     </Content>
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Images\logo-transparent.png" />
+    <Content Include="MarkItBookModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>MarkItBookModel.edmx</DependentUpon>
+      <LastGenOutput>MarkItBookModel.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="MarkItBookModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>MarkItBookModel.edmx</DependentUpon>
+      <LastGenOutput>MarkItBookModel.cs</LastGenOutput>
+    </Content>
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
@@ -218,13 +228,20 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Model.cs">
-      <DependentUpon>Model.edmx</DependentUpon>
-    </Compile>
-    <Compile Include="Model.Designer.cs">
-      <DependentUpon>Model.edmx</DependentUpon>
+    <Compile Include="MarkItBookModel.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
+      <DependentUpon>MarkItBookModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MarkItBookModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MarkItBookModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MarkItBookModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MarkItBookModel.edmx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Site.Master.cs">
@@ -247,6 +264,9 @@
     </Compile>
     <Compile Include="Splash.aspx.designer.cs">
       <DependentUpon>Splash.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="user.cs">
+      <DependentUpon>MarkItBookModel.tt</DependentUpon>
     </Compile>
     <Compile Include="ViewSwitcher.ascx.cs">
       <DependentUpon>ViewSwitcher.ascx</DependentUpon>

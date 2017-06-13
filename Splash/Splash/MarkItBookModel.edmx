@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-    <Schema Namespace="Model.Store" Provider="MySql.Data.MySqlClient" ProviderManifestToken="5.6" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="MarkitbookDBModel.Store" Provider="MySql.Data.MySqlClient" ProviderManifestToken="5.6" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="user">
           <Key>
             <PropertyRef Name="id" />
@@ -13,22 +13,22 @@
           <Property Name="name" Type="varchar" MaxLength="45" />
           <Property Name="password" Type="varchar" MaxLength="100" />
           <Property Name="email" Type="varchar" MaxLength="100" />
-          <Property Name="mobile" Type="int" />
+          <Property Name="mobile" Type="varchar" MaxLength="25" />
           <Property Name="first" Type="varchar" MaxLength="45" />
           <Property Name="last" Type="varchar" MaxLength="45" />
           <Property Name="gender" Type="char" MaxLength="1" />
           <Property Name="birthdate" Type="date" />
           <Property Name="deleted" Type="bool" />
         </EntityType>
-        <EntityContainer Name="ModelStoreContainer">
+        <EntityContainer Name="MarkitbookDBModelStoreContainer">
           <EntitySet Name="user" EntityType="Self.user" Schema="MarkitbookDB" store:Type="Tables" />
         </EntityContainer>
       </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
-      <Schema xmlns="http://schemas.microsoft.com/ado/2009/11/edm" xmlns:cg="http://schemas.microsoft.com/ado/2006/04/codegeneration" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" Namespace="Model" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" annotation:UseStrongSpatialTypes="false">
-        <EntityContainer Name="ModelContainer" annotation:LazyLoadingEnabled="true">
-          <EntitySet Name="users" EntityType="Model.user" />
+      <Schema Namespace="MarkitbookDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="MarkitbookDBEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="users" EntityType="MarkitbookDBModel.user" />
         </EntityContainer>
         <EntityType Name="user">
           <Key>
@@ -38,7 +38,7 @@
           <Property Name="name" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
           <Property Name="password" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
           <Property Name="email" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
-          <Property Name="mobile" Type="Int32" />
+          <Property Name="mobile" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
           <Property Name="first" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
           <Property Name="last" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
           <Property Name="gender" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
@@ -49,12 +49,10 @@
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
-      <Mapping xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs" Space="C-S">
-        <Alias Key="Model" Value="Model" />
-        <Alias Key="Target" Value="Model.Store" />
-        <EntityContainerMapping CdmEntityContainer="ModelContainer" StorageEntityContainer="ModelStoreContainer">
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="MarkitbookDBModelStoreContainer" CdmEntityContainer="MarkitbookDBEntities">
           <EntitySetMapping Name="users">
-            <EntityTypeMapping TypeName="Model.user">
+            <EntityTypeMapping TypeName="MarkitbookDBModel.user">
               <MappingFragment StoreEntitySet="user">
                 <ScalarProperty Name="deleted" ColumnName="deleted" />
                 <ScalarProperty Name="birthdate" ColumnName="birthdate" />
@@ -74,23 +72,22 @@
     </edmx:Mappings>
   </edmx:Runtime>
   <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
-  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
-    <edmx:Connection>
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
       <DesignerInfoPropertySet>
         <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
       </DesignerInfoPropertySet>
-    </edmx:Connection>
-    <edmx:Options>
+    </Connection>
+    <Options>
       <DesignerInfoPropertySet>
         <DesignerProperty Name="ValidateOnBuild" Value="true" />
-        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
         <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
-        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
-        <DesignerProperty Name="UseLegacyProvider" Value="False" />
       </DesignerInfoPropertySet>
-    </edmx:Options>
+    </Options>
     <!-- Diagram content (shape and connector positions) -->
-    <edmx:Diagrams>
-    </edmx:Diagrams>
-  </edmx:Designer>
+    <Diagrams></Diagrams>
+  </Designer>
 </edmx:Edmx>

@@ -56,7 +56,7 @@
 										    </div>
 									    </div>
 								    </form>--%>
-								    <form id="register-form" action="http://phpoll.com/register/process" method="post" role="form" style="display: none;">
+								    <form id="register-form" action="" method="post" role="form" style="display: none;">
 									    <div class="form-group">
 										    <input type="email" name="email" id="email" tabindex="1" class="form-control" placeholder="Email Address" value="">
 									    </div>
